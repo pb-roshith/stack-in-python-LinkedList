@@ -1,3 +1,8 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
 class Stack:
     def __init__(self):
         self.top = None
@@ -22,6 +27,13 @@ class Stack:
             return "Stack is empty"
         return self.top.data
         
+    def traverse(self):
+        curr = self.top
+        while curr:
+            print(curr.data,end="->")
+            curr = curr.next
+        print("None")
+        
 stack = Stack()
 stack.StackPush(10)
 stack.StackPush(20)
@@ -31,6 +43,4 @@ print(stack.peek())
 print(stack.isEmpty())
 print(stack.StackPop())
 print(stack.StackPop())
-print(stack.StackPop())
-print(stack.StackPop())
-print(stack.isEmpty())
+stack.traverse()
